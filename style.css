@@ -1,0 +1,642 @@
+/* ===== 色・文字・余白の基準 ===== */
+:root {
+  --color-bg: #fafaf8;
+  --color-text: #1c1c1c;
+  --color-muted: #6e6e6a;
+  --color-line: #e2e2dd;
+  --color-accent: #1f5f5b;
+  --color-error: #b3261e;
+
+  --font-sans: "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --container: 1080px;
+  --gutter: 24px;
+  --section-space: 160px;
+  --header-height: 72px;
+}
+
+/* ===== 基本 ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.small {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.header.is-scrolled {
+  border-bottom-color: var(--color-line);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container);
+  height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.logo__sub {
+  margin-left: 10px;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+}
+
+.nav__list a {
+  text-decoration: none;
+}
+
+.nav__list a:not(.nav__cta):hover {
+  color: var(--color-accent);
+}
+
+.nav__cta {
+  padding: 6px 16px;
+  border: 1px solid var(--color-text);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav__cta:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* ===== ファーストビュー ===== */
+.hero {
+  padding: 140px 0 var(--section-space);
+}
+
+.hero__title {
+  margin-top: 24px;
+  font-size: clamp(26px, 7.4vw, 56px);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+}
+
+.hero__lead {
+  margin: 40px 0 48px;
+  color: var(--color-muted);
+}
+
+.hero__facts {
+  display: flex;
+  gap: 48px;
+  margin-top: 96px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+  font-size: 14px;
+}
+
+.hero__facts dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+/* ===== セクション共通 ===== */
+.section {
+  padding: var(--section-space) 0 0;
+}
+
+.section__grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+}
+
+.section__title {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.section__lead {
+  margin-bottom: 56px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+/* ===== 教室について ===== */
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.points__item {
+  padding-top: 20px;
+  border-top: 1px solid var(--color-text);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.points__title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ===== コース ===== */
+.courses {
+  border-top: 1px solid var(--color-line);
+}
+
+.course {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.course__num,
+.course__term {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-accent);
+}
+
+.course__term {
+  color: var(--color-muted);
+}
+
+.course__name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.course__desc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* ===== 料金 ===== */
+.price {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--color-line);
+}
+
+.price th,
+.price td {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.price th {
+  width: 40%;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.price strong {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.price__strike {
+  margin-right: 8px;
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+.price__note {
+  display: block;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.price + .small {
+  margin-top: 16px;
+}
+
+/* ===== 受講の流れ ===== */
+.flow {
+  counter-reset: step;
+}
+
+.flow__step {
+  position: relative;
+  padding: 0 0 40px 56px;
+  font-size: 14px;
+  color: var(--color-muted);
+  counter-increment: step;
+}
+
+.flow__step::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-accent);
+}
+
+/* 番号どうしをつなぐ縦線 */
+.flow__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  bottom: 8px;
+  left: 9px;
+  border-left: 1px solid var(--color-line);
+}
+
+.flow__title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ===== よくある質問 ===== */
+.faq {
+  border-top: 1px solid var(--color-line);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq__item summary {
+  position: relative;
+  padding: 24px 40px 24px 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 開閉を示す「＋」。開くと「－」になる */
+.faq__item summary::after {
+  content: "+";
+  position: absolute;
+  top: 22px;
+  right: 4px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.faq__item[open] summary::after {
+  content: "−";
+}
+
+.faq__item p {
+  padding: 0 40px 24px 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* ===== フォーム ===== */
+.form {
+  max-width: 560px;
+}
+
+.form__row {
+  margin-bottom: 28px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form__required {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--color-accent);
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--color-text);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+}
+
+.form select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-text) 50%),
+    linear-gradient(135deg, var(--color-text) 50%, transparent 50%);
+  background-position: calc(100% - 10px) 50%, calc(100% - 5px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form__error {
+  display: none;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-error);
+}
+
+.form__row.is-invalid input,
+.form__row.is-invalid select {
+  border-bottom-color: var(--color-error);
+}
+
+.form__row.is-invalid .form__error {
+  display: block;
+}
+
+.form__done {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+}
+
+/* ===== フッター ===== */
+.footer {
+  margin-top: var(--section-space);
+  padding: 48px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.footer .logo {
+  font-size: 16px;
+}
+
+/* ===== スマートフォン ===== */
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+    --section-space: 96px;
+    --header-height: 60px;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle__bar {
+    height: 1px;
+    background: var(--color-text);
+    transition: transform 0.2s;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .nav {
+    position: fixed;
+    inset: var(--header-height) 0 0;
+    padding: 32px var(--gutter);
+    background: var(--color-bg);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+
+  .nav.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    font-size: 18px;
+  }
+
+  .nav__list li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .nav__list a {
+    display: block;
+    padding: 18px 0;
+  }
+
+  .nav__cta {
+    border: none;
+    color: var(--color-accent);
+  }
+
+  .hero {
+    padding-top: 64px;
+  }
+
+  .hero__facts {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 64px;
+  }
+
+  .section__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section__lead {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .points {
+    grid-template-columns: 1fr;
+  }
+
+  .course {
+    grid-template-columns: 32px 1fr;
+    gap: 8px 16px;
+  }
+
+  .course__term {
+    grid-column: 2;
+  }
+
+  .price th {
+    width: auto;
+    padding-right: 16px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

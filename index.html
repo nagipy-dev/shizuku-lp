@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>しずく プログラミング教室｜仕事で使えるプログラミングを、少人数で</title>
+  <meta name="description" content="大学生・社会人のための初心者向けプログラミング教室。Python入門・業務自動化・Webサイト制作を、1クラス最大4名の少人数で学べます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="top">
+    <div class="header__inner">
+      <a class="logo" href="#top">しずく<span class="logo__sub">プログラミング教室</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">メニューを開く</span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="メインメニュー">
+        <ul class="nav__list">
+          <li><a href="#about">教室について</a></li>
+          <li><a href="#courses">コース</a></li>
+          <li><a href="#price">料金</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a class="nav__cta" href="#contact">無料体験</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="label">Programming School for Beginners</p>
+        <h1 class="hero__title">仕事で使える<br>プログラミングを、<br>少人数で、ていねいに。</h1>
+        <p class="hero__lead">
+          大学生・社会人のための、初心者向けプログラミング教室です。<br class="pc-only">手を動かしながら、明日の作業が少し楽になる技術を身につけます。
+        </p>
+        <a class="button" href="#contact">無料体験に申し込む</a>
+        <dl class="hero__facts">
+          <div><dt>定員</dt><dd>1クラス最大4名</dd></div>
+          <div><dt>授業</dt><dd>月4回・各90分</dd></div>
+          <div><dt>場所</dt><dd>教室 / オンライン</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">01 / About</p>
+          <h2 class="section__title">教室について</h2>
+        </header>
+        <div class="section__body">
+          <p class="section__lead">
+            「プログラミングを学んでみたいけれど、何から始めればいいかわからない」。<br class="pc-only">しずくは、そんな方のための小さな教室です。
+          </p>
+          <ul class="points">
+            <li class="points__item">
+              <h3 class="points__title">少人数だから、置いていかない</h3>
+              <p>1クラスは最大4名。つまずいたところを、その場で一緒に解決します。</p>
+            </li>
+            <li class="points__item">
+              <h3 class="points__title">題材は、実際の仕事から</h3>
+              <p>表の集計、メールの自動送信、お店のWebサイト。身近な作業を教材にします。</p>
+            </li>
+            <li class="points__item">
+              <h3 class="points__title">授業の外でも、質問できる</h3>
+              <p>受講中はチャットで何度でも質問OK。自習の時間も無駄になりません。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="courses">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">02 / Courses</p>
+          <h2 class="section__title">コース</h2>
+        </header>
+        <div class="section__body">
+          <ol class="courses">
+            <li class="course">
+              <p class="course__num">A</p>
+              <div class="course__main">
+                <h3 class="course__name">Python入門</h3>
+                <p class="course__desc">プログラミングの基本から、Webページの情報を集めてExcelにまとめるツールづくりまで。</p>
+              </div>
+              <p class="course__term">3か月</p>
+            </li>
+            <li class="course">
+              <p class="course__num">B</p>
+              <div class="course__main">
+                <h3 class="course__name">業務自動化（Google Apps Script）</h3>
+                <p class="course__desc">スプレッドシートやGmailを自動で動かし、毎日の手作業を減らす仕組みをつくります。</p>
+              </div>
+              <p class="course__term">2か月</p>
+            </li>
+            <li class="course">
+              <p class="course__num">C</p>
+              <div class="course__main">
+                <h3 class="course__name">Webサイト制作（HTML / CSS）</h3>
+                <p class="course__desc">スマートフォンにも対応した、シンプルで読みやすいWebページを一から作ります。</p>
+              </div>
+              <p class="course__term">3か月</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="price">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">03 / Price</p>
+          <h2 class="section__title">料金</h2>
+        </header>
+        <div class="section__body">
+          <table class="price">
+            <tbody>
+              <tr>
+                <th scope="row">入会金</th>
+                <td><span class="price__strike">¥10,000</span> <strong>¥0</strong><span class="price__note">体験当日のお申し込みで無料</span></td>
+              </tr>
+              <tr>
+                <th scope="row">月謝（教室）</th>
+                <td><strong>¥12,000</strong><span class="price__note">月4回・各90分</span></td>
+              </tr>
+              <tr>
+                <th scope="row">月謝（オンライン）</th>
+                <td><strong>¥10,000</strong><span class="price__note">月4回・各90分</span></td>
+              </tr>
+              <tr>
+                <th scope="row">教材費</th>
+                <td><strong>¥0</strong><span class="price__note">テキストはすべてオンラインで配布</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small">表示価格はすべて税込みです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">04 / Flow</p>
+          <h2 class="section__title">受講の流れ</h2>
+        </header>
+        <div class="section__body">
+          <ol class="flow">
+            <li class="flow__step">
+              <h3 class="flow__title">無料体験に申し込む</h3>
+              <p>下のフォームから、希望のコースを選んで送信してください。</p>
+            </li>
+            <li class="flow__step">
+              <h3 class="flow__title">体験レッスン（60分）</h3>
+              <p>実際に簡単なプログラムを動かしてみます。パソコンの貸し出しもあります。</p>
+            </li>
+            <li class="flow__step">
+              <h3 class="flow__title">コースを決めて入会</h3>
+              <p>体験のあとに、目的に合ったコースを一緒に考えます。無理な勧誘はしません。</p>
+            </li>
+            <li class="flow__step">
+              <h3 class="flow__title">受講スタート</h3>
+              <p>翌月から授業が始まります。途中でコースを変えることもできます。</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">05 / FAQ</p>
+          <h2 class="section__title">よくある質問</h2>
+        </header>
+        <div class="section__body">
+          <div class="faq">
+            <details class="faq__item">
+              <summary>まったくの初心者でも大丈夫ですか？</summary>
+              <p>はい。受講生の多くは、プログラミングに初めて触れる方です。パソコンの基本操作ができれば始められます。</p>
+            </details>
+            <details class="faq__item">
+              <summary>パソコンを持っていなくても通えますか？</summary>
+              <p>教室ではパソコンを無料でお貸ししています。自宅で復習したい方には、購入前に相談にのります。</p>
+            </details>
+            <details class="faq__item">
+              <summary>授業を休んだ場合はどうなりますか？</summary>
+              <p>同じ月の別のクラスに振り替えられます。授業の録画もお渡ししています。</p>
+            </details>
+            <details class="faq__item">
+              <summary>途中で辞めることはできますか？</summary>
+              <p>前月末までにお知らせいただければ、いつでも退会できます。違約金はありません。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container section__grid">
+        <header class="section__head">
+          <p class="label">06 / Contact</p>
+          <h2 class="section__title">無料体験の申し込み</h2>
+        </header>
+        <div class="section__body">
+          <form class="form" id="contact-form" novalidate>
+            <div class="form__row">
+              <label for="name">お名前<span class="form__required">必須</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+              <p class="form__error" data-for="name">お名前を入力してください。</p>
+            </div>
+            <div class="form__row">
+              <label for="email">メールアドレス<span class="form__required">必須</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <p class="form__error" data-for="email">メールアドレスを正しく入力してください。</p>
+            </div>
+            <div class="form__row">
+              <label for="course">希望のコース<span class="form__required">必須</span></label>
+              <select id="course" name="course" required>
+                <option value="">選択してください</option>
+                <option>Python入門</option>
+                <option>業務自動化（Google Apps Script）</option>
+                <option>Webサイト制作（HTML / CSS）</option>
+                <option>まだ決めていない</option>
+              </select>
+              <p class="form__error" data-for="course">コースを選択してください。</p>
+            </div>
+            <div class="form__row">
+              <label for="message">ご質問など</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button class="button" type="submit">送信する</button>
+            <p class="form__done" id="form-done" hidden>
+              送信を受け付けました。2営業日以内にご連絡します。<br>
+              <span class="small">※このページはポートフォリオ用の見本のため、実際には送信されません。</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="logo">しずく<span class="logo__sub">プログラミング教室</span></p>
+      <p class="small">このサイトはポートフォリオ用の架空の教室です。</p>
+      <p class="small">&copy; <span id="year">2026</span> Shizuku Programming School</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
